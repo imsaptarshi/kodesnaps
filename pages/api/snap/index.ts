@@ -1,0 +1,29 @@
+import nextConnect from "next-connect";
+import middleware from "../../../middleware/database";
+
+const app: any = nextConnect();
+
+app.use(middleware)
+
+
+app.get(async (req: any, res: any) => {
+  const collection: any[] = [];
+  await req.db.collection("user").find().forEach((doc: any) => {
+    collection.push(doc)
+  });
+  res.json(collection)
+})
+
+app.post(async (req: any, res: any) => {
+  console.log(req)
+  const body = JSON.parse(req.body)
+
+  const resp = await req.db.collection("user").insertOne({
+    username: body.username,
+    code: body.code,
+    language: body.language
+  })
+  res.send(resp)
+})
+
+export default app;

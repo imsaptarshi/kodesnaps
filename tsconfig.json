@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    "jsx": "preserve",
+    "moduleResolution": "Node",
+    "target": "es6",
+    "module": "CommonJS",
+    "lib": [
+      "esnext"
+    ],
+    "strict": true,
+    "sourceMap": true,
+    "declaration": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "declarationDir": "./root",
+    "resolveJsonModule": true,
+    "outDir": "./root",
+    "rootDir": ".",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "isolatedModules": true
+  },
+  "include": [
+    "./**/*.tsx",
+    "./**/*/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "./dist/**/*"
+  ]
+}

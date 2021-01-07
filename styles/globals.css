@@ -12,3 +12,11 @@
 .addbutton:hover {
   transform: scale(1.2, 1.2);
 }
+
+.custom-input:focus {
+  outline: none;
+}
+
+.dropdown {
+  z-index: 99999;
+}

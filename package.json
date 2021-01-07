@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "axios": "^0.21.1",
     "mongodb": "^3.6.3",
     "next": "10.0.4",
     "next-connect": "^0.9.1",

@@ -6,12 +6,26 @@ const app: any = nextConnect();
 
 app.use(middleware)
 
-app.get(async (req: any, res: any) => {
+app.post(async (req: any, res: any) => {
     const {
         query: { id },
     } = req
-    console.log(id)
-    const doc = await req.db.collection("user").findOne({ _id: new ObjectId(id) })
+
+    const body = req.body
+    const doc = await req.db.collection("user").findOneAndUpdate(
+
+        { _id: new ObjectId(id) },
+        {
+            $set: {
+                username: body.username,
+                language: body.language,
+                code: body.code,
+                edit_pass: body.edit_pass
+            }
+
+        }
+
+    )
     res.json(doc)
 })
 

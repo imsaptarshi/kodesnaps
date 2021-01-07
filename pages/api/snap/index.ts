@@ -20,8 +20,9 @@ app.post(async (req: any, res: any) => {
 
   const resp = await req.db.collection("user").insertOne({
     username: body.username,
+    language: body.language,
     code: body.code,
-    language: body.language
+    edit_pass: body.edit_pass
   })
   res.send(resp)
 })

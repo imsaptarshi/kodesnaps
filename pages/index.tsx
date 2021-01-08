@@ -1,6 +1,6 @@
-import axios from "axios";
 import React from "react";
 import Navbar from "../components/navbar/navbar.component";
+import NotSupported from "../components/not_supported/not_supported"
 import Head from "next/head";
 
 const Home: React.FC = () => {
@@ -8,9 +8,15 @@ const Home: React.FC = () => {
     <div className="p-3">
       <Head>
         <title>Kodesnaps</title>
+        <meta name="description" content="Share code in the most easier way than ever" />
+        <meta name="title" content={`Kodesnaps | Sharing Code Made Easier`} />
+        <meta name="image" content="/kodesnaps_il1.png" />
+        <meta property="og:title" content={`Kodesnaps | Sharing Code Made Easier`} />
+        <meta property="og:description" content="Share code in the most easier way than ever" />
+        <meta property="og:image" content="/kodesnaps_il1.png" />
       </Head>
       <Navbar />
-      <div className="hidden lg:flex px-10 py-8 lg:px-24 justify-between">
+      <div className="hidden lg:flex px-10 py-8 lg:px-20 justify-between">
         <div className="inline lg:pt-32 md:pt-32">
           <div className="font-sans font-display font-bold text-primary text-3xl lg:text-6xl">
             Sharing Code
@@ -31,6 +37,7 @@ const Home: React.FC = () => {
           <img className="inline" src="/illustration.svg" />
         </div>
       </div>
+      <NotSupported />
     </div>
   )
 }

@@ -9,7 +9,7 @@ interface props {
 const CustomButton: React.FC<props> = ({ value, onclick, otherProps }) => {
     return (
         <button
-            className={`custom-button w-16 hover:shadow-xl rounded-lg font-display h-8 m-3 ${otherProps ? otherProps : ""}`}
+            className={`custom-button focus:outline-none w-16 hover:shadow-xl rounded-lg font-display h-8 m-3 ${otherProps ? otherProps : ""}`}
             onClick={onclick}
         >
             {value}

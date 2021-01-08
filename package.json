@@ -10,6 +10,10 @@
   "dependencies": {
     "ace-builds": "^1.4.12",
     "axios": "^0.21.1",
+    "babel": "^6.23.0",
+    "dgram": "^1.0.1",
+    "dns": "^0.2.2",
+    "fetch": "^1.1.0",
     "mongodb": "^3.6.3",
     "next": "10.0.4",
     "next-connect": "^0.9.1",

@@ -9,6 +9,7 @@ import Select from "react-select";
 import CustomButton from "../../components/custom_button/custom_button.component";
 import Head from "next/head";
 import LANGUAGES from "../../utils/languages";
+import THEMES from "../../utils/themes";
 import axios from "axios";
 const CodeEditor = dynamic(import("../../components/code_editor/code_editor.component"), { ssr: false })
 
@@ -19,18 +20,18 @@ const NewSnap: React.FC = () => {
     const [username, setUsername] = useState("");
     const [language, setLanguage] = useState({ value: undefined, label: undefined });
     const [code, setCode] = useState("");
+    const [theme, setTheme] = useState({ value: undefined, label: undefined });
     const [editPass, setEditPass] = useState("");
 
     //errors
     const [usernameError, setUsernameError] = useState(false);
-    const [languageError, setLanguageError] = useState(false);
     const [editPassError, setEditPassErrorError] = useState(false);
 
     const router = useRouter();
 
 
     const isAllFieldsFilled = () => {
-        return !!username && !!language.value && !!language.label && !!code && !!editPass;
+        return !!username && !!language.value && !!language.label && !!code && !!editPass && !!theme.label && !!theme.value;
     }
 
     const formHandler = (e: any) => {
@@ -44,6 +45,8 @@ const NewSnap: React.FC = () => {
                 username: username,
                 language_label: language.label,
                 language: language.value,
+                theme_label: theme.label,
+                theme: theme.value,
                 code: code,
                 edit_pass: editPass
             })
@@ -60,7 +63,6 @@ const NewSnap: React.FC = () => {
 
             setEditPassErrorError(!editPass);
             setUsernameError(!username)
-            setLanguageError(!language.label && !language.value)
         }
     }
 
@@ -87,6 +89,13 @@ const NewSnap: React.FC = () => {
                             onChange={setLanguage}
                             placeholder="Language"
                         />
+                        <Select
+                            className={`font-display w-40 h-0 m-4`}
+                            options={THEMES}
+                            isSearchable={true}
+                            onChange={setTheme}
+                            placeholder="Theme"
+                        />
                         <div className="ml-auto">
                             <CustomInput
                                 value={editPass}
@@ -100,7 +109,10 @@ const NewSnap: React.FC = () => {
                     </div>
                     <CodeEditor
                         language={language.value}
-                        onchange={(e: any) => { setCode(e) }} />
+                        onchange={(e: any) => { setCode(e) }}
+                        theme={theme.value}
+                        value={code}
+                    />
                     <CustomButton value="Save" onclick={formHandler} otherProps="float-right" />
                 </form>
             </div>

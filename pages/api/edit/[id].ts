@@ -18,7 +18,10 @@ app.post(async (req: any, res: any) => {
         {
             $set: {
                 username: body.username,
+                language_label: body.language_label,
                 language: body.language,
+                theme_label: body.theme_label,
+                theme: body.theme,
                 code: body.code,
                 edit_pass: body.edit_pass
             }

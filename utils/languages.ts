@@ -1,17 +1,17 @@
 //Supported languages
 const LANGUAGES: any[] = [
-    { value: "javascript", label: "javascript" },
-    { value: "java", label: "java" },
-    { value: "python", label: "python" },
-    { value: "csharp", label: "c++" },
-    { value: "csharp", label: "c" },
-    { value: "golang", label: "go" },
-    { value: "ruby", label: "ruby" },
-    { value: "javascript", label: "typescript" },
-    { value: "coffee", label: "coffee" },
-    { value: "html", label: "html" },
-    { value: "css", label: "css" },
-    { value: "json", label: "json" },
+    { value: "javascript", label: "Javascript" },
+    { value: "java", label: "Java" },
+    { value: "python", label: "Python" },
+    { value: "csharp", label: "C++" },
+    { value: "csharp", label: "C" },
+    { value: "golang", label: "Go" },
+    { value: "ruby", label: "Ruby" },
+    { value: "javascript", label: "Typescript" },
+    { value: "coffee", label: "Coffee" },
+    { value: "html", label: "HTML" },
+    { value: "css", label: "CSS" },
+    { value: "json", label: "JSON" },
 ]
 
 export default LANGUAGES

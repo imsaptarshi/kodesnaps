@@ -66,7 +66,7 @@ const EditSnap: NextPage<props> = ({
                 autoClose: 20000
             });
 
-            axios.post(`${process.env.DOMAIN}/api/edit/${id}`, {
+            axios.post(`https://kodesnaps.vercel.app/api/edit/${id}`, {
                 username: currUsername,
                 language_label: currLanguage.label,
                 language: currLanguage.value,
@@ -153,7 +153,7 @@ const EditSnap: NextPage<props> = ({
 
 EditSnap.getInitialProps = async (req: any) => {
     const id = req.query.id
-    const res = await axios.get(`${process.env.DOMAIN}/api/snap/${id}`)
+    const res = await axios.get(`https://kodesnaps.vercel.app/api/snap/${id}`)
     const json = await res.data;
     return {
         username: json.username,

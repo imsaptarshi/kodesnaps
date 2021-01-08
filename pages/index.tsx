@@ -10,10 +10,10 @@ const Home: React.FC = () => {
         <title>Kodesnaps</title>
         <meta name="description" content="Share code in the most easier way than ever" />
         <meta name="title" content={`Kodesnaps | Sharing Code Made Easier`} />
-        <meta name="image" content="/kodesnaps_il1.png" />
+        <meta name="image" content="/kodesnaps_logo.png" />
         <meta property="og:title" content={`Kodesnaps | Sharing Code Made Easier`} />
         <meta property="og:description" content="Share code in the most easier way than ever" />
-        <meta property="og:image" content="/kodesnaps_il1.png" />
+        <meta property="og:image" content="/kodesnaps_logo.png" />
       </Head>
       <Navbar />
       <div className="hidden lg:flex px-10 py-8 lg:px-20 justify-between">

@@ -20,7 +20,7 @@ const CodeEditor: React.FC<props> = ({ language, onchange }) => {
             editorProps={{ $blockScrolling: true }}
             fontSize={16}
             width="100%"
-            height="400px"
+            height="350px"
         />
     )
 }

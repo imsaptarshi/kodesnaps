@@ -152,7 +152,7 @@ const Snap: NextPage<props> = ({
 
 Snap.getInitialProps = async (req: any) => {
     const id = req.query.id
-    const res = await axios.get(`${process.env.DOMAIN}/api/snap/${id}`)
+    const res = await axios.get(`https://kodesnaps.vercel.app/api/snap/${id}`)
     const json = await res.data;
     return {
         username: json.username,

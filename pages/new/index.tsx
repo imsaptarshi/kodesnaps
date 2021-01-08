@@ -40,7 +40,7 @@ const NewSnap: React.FC = () => {
                 autoClose: 20000
             });
 
-            axios.post(`${process.env.DOMAIN}/api/snap`, {
+            axios.post(`https://kodesnaps.vercel.app/api/snap`, {
                 username: username,
                 language_label: language.label,
                 language: language.value,

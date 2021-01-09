@@ -27,7 +27,7 @@ const Home: React.FC = () => {
           <div className="flex mt-8 font-display font-regular text-xl lg:text-3xl">
             Create one now!
             <a href="/new">
-              <button className="addbutton w-10 h-10 rounded-full ml-5">
+              <button className="focus:outline-none addbutton w-10 h-10 rounded-full ml-5">
                 <img className="mx-auto" src="/add.svg" />
               </button>
             </a>

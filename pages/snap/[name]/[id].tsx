@@ -12,6 +12,7 @@ import NotSupported from "../../../components/not_supported/not_supported";
 import axios from "axios";
 const CodeEditor = dynamic(import("../../../components/code_editor/code_editor.component"), { ssr: false })
 
+
 interface props {
     username: string,
     language: {
@@ -42,7 +43,7 @@ const Snap: NextPage<props> = ({
 
     const [isEditVisible, setIsEditVisible] = useState(false);
     const [currUser, setCurrUser] = useState({ editPass: "" })
-    const [url, setUrl] = useState(`${process.env.DOMAIN ? process.env.DOMAIN : "https://kodesnaps.vercel.app"}/snap/${name.replaceAll(" ", "%20")}/${id}`)
+    const [url, setUrl] = useState(`${process.env.DOMAIN ? process.env.DOMAIN : "https://kodesnaps.vercel.app"}/snap/${String(name).replaceAll(" ", "%20")}/${id}`)
     const [isCopied, setIsCopied] = useState(false);
     //errors
     const [editPassError, setEditPassError] = useState(false);

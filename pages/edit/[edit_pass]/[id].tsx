@@ -66,7 +66,7 @@ const EditSnap: NextPage<props> = ({
                 autoClose: 20000
             });
 
-            axios.post(`https://kodesnaps.vercel.app/api/edit/${id}`, {
+            axios.post(`${process.env.DOMAIN ? process.env.DOMAIN : "https://kodesnaps.vercel.app"}/api/edit/${id}`, {
                 username: currUsername,
                 language_label: currLanguage.label,
                 language: currLanguage.value,
@@ -76,7 +76,7 @@ const EditSnap: NextPage<props> = ({
                 edit_pass: currEditPass
             })
                 .then((res: any) => {
-                    router.push(`/snap/${res.data.value.username}/${res.data.value._id}`, undefined, { shallow: true })
+                    router.push(`/snap/${currUsername}/${res.data.value._id}`, undefined, { shallow: true })
                 })
                 .catch((err: any) => {
 
@@ -141,7 +141,7 @@ const EditSnap: NextPage<props> = ({
                             theme={currTheme.value}
                             value={currCode}
                         />
-                        <CustomButton value="Save" onclick={formHandler} otherProps="float-right" />
+                        <CustomButton value="Save" onclick={formHandler} otherProps="float-right w-24 h-9 mr-0" />
                     </form>
                 </div>) : (<></>)
             }
@@ -153,7 +153,7 @@ const EditSnap: NextPage<props> = ({
 
 EditSnap.getInitialProps = async (req: any) => {
     const id = req.query.id
-    const res = await axios.get(`https://kodesnaps.vercel.app/api/snap/${id}`)
+    const res = await axios.get(`${process.env.DOMAIN ? process.env.DOMAIN : "https://kodesnaps.vercel.app"}/api/snap/${id}`)
     const json = await res.data;
     return {
         username: json.username,

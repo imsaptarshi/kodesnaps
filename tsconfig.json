@@ -5,7 +5,8 @@
     "target": "es6",
     "module": "CommonJS",
     "lib": [
-      "esnext"
+      "esnext",
+      "DOM"
     ],
     "strict": true,
     "sourceMap": true,

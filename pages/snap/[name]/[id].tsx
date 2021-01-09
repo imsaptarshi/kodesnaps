@@ -42,7 +42,8 @@ const Snap: NextPage<props> = ({
 
     const [isEditVisible, setIsEditVisible] = useState(false);
     const [currUser, setCurrUser] = useState({ editPass: "" })
-
+    const [url, setUrl] = useState(`${process.env.DOMAIN ? process.env.DOMAIN : "https://kodesnaps.vercel.app"}/snap/${name}/${id}`)
+    const [isCopied, setIsCopied] = useState(false);
     //errors
     const [editPassError, setEditPassError] = useState(false);
 
@@ -56,6 +57,16 @@ const Snap: NextPage<props> = ({
             </button>
         )
     }
+
+    const copyHandler = () => {
+        let tempInput = document.createElement("input");
+        tempInput.value = url
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        document.execCommand("copy");
+        document.body.removeChild(tempInput);
+        setIsCopied(true);
+    };
 
 
     const isAllFieldsFilled = () => {
@@ -118,7 +129,7 @@ const Snap: NextPage<props> = ({
                                     <div className="ml-auto">
                                         <CustomInput
                                             value={currUser.editPass}
-                                            width="32"
+                                            width="20"
                                             placeholder="Edit pass"
                                             isError={editPassError}
                                             otherProps="mr-0"
@@ -143,6 +154,22 @@ const Snap: NextPage<props> = ({
                         onchange={() => { }}
                     />
                 </form>
+                <div className="flex justify-center mt-5">
+                    <CustomInput
+                        value={url}
+                        disabled={true}
+                        placeholder="Share Link"
+                        onchange={() => { }}
+                        otherProps="h-10 mr-0 mt-0 rounded-r-none w-8/12"
+                    />
+                    <button
+                        className="custom-button focus:outline-none w-12 ml-0 mt-0 hover:shadow-xl rounded-r-md font-display h-10 m-3"
+                        onClick={copyHandler}
+                    >
+                        {isCopied ? <img className="mx-auto" src="/copied.svg" /> : <img className="mx-auto" src="/clipboard.svg" />}
+                    </button>
+
+                </div>
             </div>
             <NotSupported />
         </div>
@@ -152,7 +179,7 @@ const Snap: NextPage<props> = ({
 
 Snap.getInitialProps = async (req: any) => {
     const id = req.query.id
-    const res = await axios.get(`https://kodesnaps.vercel.app/api/snap/${id}`)
+    const res = await axios.get(`${process.env.DOMAIN ? process.env.DOMAIN : "https://kodesnaps.vercel.app"}/api/snap/${id}`)
     const json = await res.data;
     return {
         username: json.username,

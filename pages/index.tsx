@@ -27,9 +27,9 @@ const Home: React.FC = () => {
           <div className="flex mt-8 font-display font-regular text-xl lg:text-3xl">
             Create one now!
             <a href="/new">
-              <div className="addbutton w-10 h-10 rounded-full text-center ml-5">
+              <button className="addbutton w-10 h-10 rounded-full text-center ml-5">
                 <span className="font-sans font-bold text-4xl text-white radius-full">+</span>
-              </div>
+              </button>
             </a>
           </div>
         </div>

@@ -42,7 +42,7 @@ const Snap: NextPage<props> = ({
 
     const [isEditVisible, setIsEditVisible] = useState(false);
     const [currUser, setCurrUser] = useState({ editPass: "" })
-    const [url, setUrl] = useState(`${process.env.DOMAIN ? process.env.DOMAIN : "https://kodesnaps.vercel.app"}/snap/${name}/${id}`)
+    const [url, setUrl] = useState(`${process.env.DOMAIN ? process.env.DOMAIN : "https://kodesnaps.vercel.app"}/snap/${name.replaceAll(" ", "%20")}/${id}`)
     const [isCopied, setIsCopied] = useState(false);
     //errors
     const [editPassError, setEditPassError] = useState(false);
@@ -56,10 +56,6 @@ const Snap: NextPage<props> = ({
                 <img className="mx-auto" src="/pencil.svg" />
             </button>
         )
-    }
-
-    for (let i = 0; i < url.length; i++) {
-        setUrl(url.replace(" ", "%20"))
     }
 
     const copyHandler = () => {

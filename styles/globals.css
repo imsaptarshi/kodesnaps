@@ -26,3 +26,11 @@
   color: white;
   transition: ease-in-out 0.2s;
 }
+
+.pass-btn {
+  transform: translateY(4px);
+}
+
+.pass-logo {
+  transform: translateX(1.4px);
+}

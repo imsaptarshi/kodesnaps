@@ -97,7 +97,7 @@ const NewSnap: React.FC = () => {
                         <div className="ml-auto">
                             <CustomInput
                                 value={editPass}
-                                width="32"
+                                width="24"
                                 placeholder="Edit pass"
                                 isError={editPassError}
                                 otherProps="mr-0"

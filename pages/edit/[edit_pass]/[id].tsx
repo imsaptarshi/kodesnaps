@@ -126,7 +126,7 @@ const EditSnap: NextPage<props> = ({
                             <div className="ml-auto">
                                 <CustomInput
                                     value={currEditPass}
-                                    width="32"
+                                    width="24"
                                     placeholder="Edit pass"
                                     isError={editPassError}
                                     otherProps="mr-0"

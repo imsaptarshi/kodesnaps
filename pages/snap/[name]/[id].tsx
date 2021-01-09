@@ -129,7 +129,7 @@ const Snap: NextPage<props> = ({
                                     <div className="ml-auto">
                                         <CustomInput
                                             value={currUser.editPass}
-                                            width="20"
+                                            width="24"
                                             placeholder="Edit pass"
                                             isError={editPassError}
                                             otherProps="mr-0"
@@ -137,10 +137,10 @@ const Snap: NextPage<props> = ({
                                         />
                                     </div>
                                     <button
-                                        className="custom-button focus:outline-none w-10 hover:shadow-xl rounded-full font-display h-10 m-3"
+                                        className="custom-button pass-btn focus:outline-none w-10 hover:shadow-xl rounded-full font-display h-10 m-3"
                                         onClick={formHandler}
                                     >
-                                        <img className="mx-auto" src="/triangle.svg" />
+                                        <img className="mx-auto pass-logo" src="/triangle.svg" />
                                     </button>
                                 </>)
                             : <EditButton />

@@ -58,6 +58,10 @@ const Snap: NextPage<props> = ({
         )
     }
 
+    for (let i = 0; i < url.length; i++) {
+        setUrl(url.replace(" ", "%20"))
+    }
+
     const copyHandler = () => {
         let tempInput = document.createElement("input");
         tempInput.value = url

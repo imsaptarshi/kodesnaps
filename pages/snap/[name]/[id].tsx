@@ -24,7 +24,8 @@ interface props {
         label: string
     },
     code: string,
-    editPass: string
+    editPass: string,
+    url: string
 }
 
 const Snap: NextPage<props> = ({
@@ -32,7 +33,8 @@ const Snap: NextPage<props> = ({
     language,
     theme,
     code,
-    editPass
+    editPass,
+    url
 }) => {
     const router = useRouter();
 
@@ -43,7 +45,6 @@ const Snap: NextPage<props> = ({
 
     const [isEditVisible, setIsEditVisible] = useState(false);
     const [currUser, setCurrUser] = useState({ editPass: "" })
-    const [url, setUrl] = useState(`${process.env.DOMAIN ? process.env.DOMAIN : "https://kodesnaps.vercel.app"}/snap/${String(name).replaceAll(" ", "%20")}/${id}`)
     const [isCopied, setIsCopied] = useState(false);
     //errors
     const [editPassError, setEditPassError] = useState(false);
@@ -179,7 +180,8 @@ const Snap: NextPage<props> = ({
 }
 
 Snap.getInitialProps = async (req: any) => {
-    const id = req.query.id
+    const id = req.query.id;
+    const url = req.asPath;
     const res = await axios.get(`${process.env.DOMAIN ? process.env.DOMAIN : "https://kodesnaps.vercel.app"}/api/snap/${id}`)
     const json = await res.data;
     return {
@@ -193,7 +195,8 @@ Snap.getInitialProps = async (req: any) => {
             label: json.theme_label,
         },
         code: json.code,
-        editPass: json.edit_pass
+        editPass: json.edit_pass,
+        url: `${process.env.DOMAIN ? process.env.DOMAIN : "https://kodesnaps.vercel.app"}${url}`
     }
 }
 

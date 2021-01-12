@@ -98,11 +98,11 @@ const Snap: NextPage<props> = ({
             <Notification />
             <Head>
                 <title>Kodesnaps | Snap by {name}</title>
-                <meta name="description" content="Share code in the most easier way than ever" />
+                <meta name="description" content="Share code in the easiest way than ever" />
                 <meta name="title" content={`Kodesnaps | Snap by ${name}`} />
                 <meta name="image" content="/kodesnaps_logo.png" />
                 <meta property="og:title" content={`Kodesnaps | Snap by ${name}`} />
-                <meta property="og:description" content="Share code in the most easier way than ever" />
+                <meta property="og:description" content="Share code in the easiest way than ever" />
                 <meta property="og:image" content="/kodesnaps_logo.png" />
             </Head>
             <NavBar />

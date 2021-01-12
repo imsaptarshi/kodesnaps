@@ -8,11 +8,11 @@ const Home: React.FC = () => {
     <div className="p-3">
       <Head>
         <title>Kodesnaps</title>
-        <meta name="description" content="Share code in the most easier way than ever" />
+        <meta name="description" content="Share code in the easiest way than ever" />
         <meta name="title" content={`Kodesnaps | Sharing Code Made Easier`} />
         <meta name="image" content="/kodesnaps_logo.png" />
         <meta property="og:title" content={`Kodesnaps | Sharing Code Made Easier`} />
-        <meta property="og:description" content="Share code in the most easier way than ever" />
+        <meta property="og:description" content="Share code in the easiest way than ever" />
         <meta property="og:image" content="/kodesnaps_logo.png" />
       </Head>
       <Navbar />
